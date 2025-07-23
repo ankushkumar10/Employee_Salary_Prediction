@@ -1,22 +1,69 @@
-Employee Salary Prediction using Machine Learning and Artificial IntelligenceOverviewThis project provides a web application for predicting employee salaries based on various features using Machine Learning. The application is built with Streamlit, making it interactive and easy to use. It leverages a trained Gradient Boosting Regressor model to offer accurate salary estimations, promoting fairness and data-driven decision-making in compensation.FeaturesSalary Prediction: Input employee details (Age, Department, Experience, Gender, Location, Performance Score, Work Session, Joining Date) to get an estimated salary.Data Exploration: Visualize and understand the underlying dataset (salary_dataset.csv) through interactive plots and summary statistics.User-Friendly Interface: An intuitive web interface built with Streamlit for seamless interaction.How It Works (Model & Algorithm)The core of this application is a Gradient Boosting Regressor model, which was selected for its superior performance in predicting salaries. The entire machine learning pipeline, from data preprocessing to model training, is encapsulated for efficient deployment.Step-by-Step Process:Data Loading: The salary_dataset.csv is loaded.Data Preprocessing:Missing 'Performance Score' values are imputed using the median.'Joining Date' is transformed into 'Joining_Year', 'Joining_Month', and 'Joining_Day' features.Irrelevant columns (ID, Name, Status) are dropped.Feature Engineering: Creation of new date-based features.Data Splitting: The dataset is split into 80% training and 20% testing sets.Preprocessing Pipeline: A ColumnTransformer applies OneHotEncoder to categorical features (Gender, Department, Location, Session) and passes numerical features (Age, Performance Score, Experience, Joining_Year, Joining_Month, Joining_Day) directly.Model Training: A Pipeline combining the preprocessor and the GradientBoostingRegressor is trained on the preprocessed data.Model Saving: The complete pipeline is saved as salary_prediction_pipeline.pkl for later use in the web application.Technologies UsedPython: Core programming language.Streamlit: For building the interactive web application.Scikit-learn: For machine learning (model building, preprocessing, evaluation).Pandas: For data manipulation and analysis.NumPy: For numerical operations.Matplotlib & Seaborn: For data visualization.Joblib: For saving and loading Python objects (the trained model pipeline).Setup and InstallationTo run this project locally, follow these steps:Clone the repository:git clone [YOUR_GITHUB_REPO_LINK_HERE]
+# 💼 Employee Salary Prediction using Machine Learning & AI
+
+## 📖 Overview
+
+This project provides a web application for predicting employee salaries based on various features using **Machine Learning**. Built with **Streamlit**, it offers an interactive and user-friendly interface. At its core, it uses a trained **Gradient Boosting Regressor** model for accurate salary estimations, promoting fairness and data-driven compensation decisions.
+
+---
+
+## 🚀 Features
+
+- **🎯 Salary Prediction:** Input employee details (Age, Department, Experience, Gender, Location, Performance Score, Work Session, Joining Date) to get an estimated salary.
+- **📊 Data Exploration:** Visualize and explore the dataset (`salary_dataset.csv`) with summary statistics and interactive plots.
+- **🖥️ Intuitive UI:** Simple and clean interface powered by Streamlit.
+
+---
+
+## 🧠 How It Works (Model & Algorithm)
+
+The core model is a **Gradient Boosting Regressor**, selected for its superior performance in salary prediction.
+
+### 🔄 Step-by-Step Process:
+
+1. **Data Loading:** Load `salary_dataset.csv`.
+2. **Data Preprocessing:**
+   - Impute missing `Performance Score` with the median.
+   - Transform `Joining Date` into `Joining_Year`, `Joining_Month`, and `Joining_Day`.
+   - Drop irrelevant columns (`ID`, `Name`, `Status`).
+3. **Feature Engineering:** Generate new date-based features.
+4. **Data Splitting:** 80% training, 20% testing.
+5. **Preprocessing Pipeline:**
+   - `ColumnTransformer` applies `OneHotEncoder` to categorical features: `Gender`, `Department`, `Location`, `Session`.
+   - Numerical features (`Age`, `Performance Score`, `Experience`, `Joining_Year`, `Joining_Month`, `Joining_Day`) are passed through directly.
+6. **Model Training:** Use a `Pipeline` combining the preprocessor and `GradientBoostingRegressor`.
+7. **Model Saving:** Save as `salary_prediction_pipeline.pkl`.
+
+---
+
+## 🛠️ Technologies Used
+
+- **Python**: Core language.
+- **Streamlit**: Web interface.
+- **Scikit-learn**: Machine learning algorithms and preprocessing.
+- **Pandas**: Data manipulation.
+- **NumPy**: Numerical computing.
+- **Matplotlib & Seaborn**: Visualization.
+- **Joblib**: Saving and loading models.
+
+---
+
+## ⚙️ Setup and Installation
+
+To run this project locally:
+
+```bash
+# 1. Clone the repository
+git clone [YOUR_GITHUB_REPO_LINK_HERE]
 cd [YOUR_REPO_NAME]
-Create a virtual environment (recommended):python -m venv venv
-# On Windows:
+
+# 2. Create and activate a virtual environment (recommended)
+python -m venv venv
+
+# On Windows
 .\venv\Scripts\activate
-# On macOS/Linux:
+
+# On macOS/Linux
 source venv/bin/activate
-Install dependencies:pip install -r requirements.txt
-Note: Ensure you have a data folder in the root directory and salary_dataset.csv inside it. If not, create it:mkdir data
-# Then place salary_dataset.csv inside the data folder
-Train the model:This script will preprocess the data and save the trained machine learning pipeline as salary_prediction_pipeline.pkl.python train_model.py
-Run the Streamlit application:streamlit run app.py
-The application will open in your default web browser.UsageOnce the Streamlit application is running:Salary Prediction: Navigate to the "Salary Prediction" page, enter the required employee details using the input fields, and click "Predict Salary" to see the estimated salary.Data Exploration: Go to the "Data Exploration" page to view raw data, summary statistics, and various visualizations of the salary_dataset.csv.About: Learn more about the application and its underlying mechanisms on the "About" page.Project Structure.
-├── data/
-│   └── salary_dataset.csv      # Raw dataset for training and exploration
-├── app.py                      # Streamlit web application
-├── train_model.py              # Script to preprocess data and train the model
-├── salary_prediction.ipynb     # Jupyter Notebook with detailed EDA and model experimentation
-├── requirements.txt            # Python dependencies
-├── salary_prediction_pipeline.pkl # Trained ML pipeline (generated by train_model.py)
-└── README.md                   # This file
-Data SourceThe project utilizes salary_dataset.csv, which contains various employee attributes and their corresponding salaries. This dataset is crucial for training the machine learning model and for the data exploration features within the application.Results & InsightsThe Gradient Boosting Regressor consistently demonstrated the best performance among the models tested (Linear Regression, Random Forest, Gradient Boosting), achieving the highest R2 Score. This indicates its effectiveness in capturing the complex relationships between employee features and salary. The data exploration section of the app provides insights into salary distributions, departmental variations, and feature correlations.Future EnhancementsAdvanced Feature Engineering: Explore more complex feature interactions or time-series features.Hyperparameter Tuning: Implement advanced tuning for optimal model performance.Ensemble Modeling: Experiment with combining multiple models for a more robust predictor.Cloud Deployment: Deploy the application to cloud platforms (AWS, GCP, Azure) for wider accessibility.User Authentication & Database Integration: Add secure user login and store historical data in a database.Feedback Loop: Incorporate a mechanism for users to provide feedback to continuously improve model accuracy.LicenseThis project is licensed under the MIT License - see the LICENSE.md file for details.(Note: You might need to create a LICENSE.md file in your repository if you choose the MIT license or any other license.)Contact[Your Name] - [Your Email/LinkedIn Profile Link (Optional)]
+
+# 3. Install dependencies
+pip install -r requirements.txt
