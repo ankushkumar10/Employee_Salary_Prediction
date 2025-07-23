@@ -1,4 +1,4 @@
-# Employee Salary Prediction using Machine Learning and Artificial Intelligence
+# Employee Salary Prediction using AI & ML
 
 ## 📌 Overview
 
@@ -51,8 +51,8 @@ The core of this application is a **Gradient Boosting Regressor** model, selecte
 
 ### Step 1: Clone the Repository
 ```bash
-git clone [YOUR_GITHUB_REPO_LINK_HERE]
-cd [YOUR_REPO_NAME]
+git clone (https://github.com/ankushkumar10/Employee_Salary_Prediction.git)
+cd Employee_Salary_Prediction
 ````
 
 ### Step 2: Create a Virtual Environment (Recommended)
