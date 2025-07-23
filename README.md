@@ -51,7 +51,7 @@ The core of this application is a **Gradient Boosting Regressor** model, selecte
 
 ### Step 1: Clone the Repository
 ```bash
-git clone (https://github.com/ankushkumar10/Employee_Salary_Prediction.git)
+git clone https://github.com/ankushkumar10/Employee_Salary_Prediction.git
 cd Employee_Salary_Prediction
 ````
 
