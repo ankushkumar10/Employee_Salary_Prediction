@@ -1,4 +1,3 @@
-# Employee_Salary_Prediction
 Employee Salary Prediction using Machine Learning and Artificial Intelligence
 Overview
 This project provides a web application for predicting employee salaries based on various features using Machine Learning. The application is built with Streamlit, making it interactive and easy to use. It leverages a trained Gradient Boosting Regressor model to offer accurate salary estimations, promoting fairness and data-driven decision-making in compensation.
